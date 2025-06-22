@@ -1,0 +1,58 @@
+# .github/ISSUE_TEMPLATE/daily-briefing.yml
+
+name: 📝 업무 현황 브리핑 작성
+description: 2~3일간의 업무 현황을 브리핑 템플릿에 맞춰 작성합니다.
+title: "[브리핑] YYYY.MM.DD ~ YYYY.MM.DD"
+labels: ["briefing", "documentation"]
+assignees: ''
+
+body:
+  - type: input
+    id: briefing-scope
+    attributes:
+      label: ■ 브리핑 범위
+      description: 이 보고서가 다루는 시간의 범위를 명시합니다. [cite_start](예: 2025. 06. 18 (수) ~ 2025. 06. 19 (목)) [cite: 25]
+      placeholder: "YYYY.MM.DD (요일) ~ YYYY.MM.DD (요일)"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: ■ 작성자
+      [cite_start]description: PM의 이름을 명시하여 책임과 신뢰를 보여줍니다. [cite: 27]
+      placeholder: "김진우 PM"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: updates-summary
+    attributes:
+      label: "1. 최신 업데이트 요약 (Latest Updates)"
+      [cite_start]description: "지난 브리핑 이후 새롭게 완료/결정된 핵심 사항을 공유합니다.  아래 태그와 형식을 지켜주세요."
+      value: |
+        > * **(완료)** > * **(진행)** > * **(결정)** > * **(이슈)** validations:
+      required: true
+
+  - type: textarea
+    id: progress-details
+    attributes:
+      label: "2. 파트별 상세 현황 (Detailed Progress by Function)"
+      [cite_start]description: "각 파트의 구체적인 진행 상황을 기록합니다.  아래 템플릿의 각 항목에 내용을 채워주세요."
+      value: |
+        #### 🎨 디자인 (Design)
+        * **[진행 업무]** * **▪️ 목표 및 기대효과:** * **▪️ 최근 진행 내용:** * * **▪️ 이슈 또는 블로커:** ---
+        #### 💻 프론트엔드 (Frontend)
+        * **[진행 업무]** * **▪️ 목표 및 기대효과:** * **▪️ 최근 진행 내용:** * * **▪️ 이슈 또는 블로커:** ---
+        #### 🗄️ 백엔드 (Backend)
+        * **[진행 업무]** * **▪️ 목표 및 기대효과:** * **▪️ 최근 진행 내용:** * * **▪️ 이슈 또는 블로커:** validations:
+      required: true
+
+  - type: textarea
+    id: next-steps
+    attributes:
+      label: "3. 단기 계획 및 협조 요청 (Immediate Next Steps & Coordination)"
+      [cite_start]description: "다음 브리핑까지 진행될 일과, 파트 간 필요한 협조사항을 명확히 합니다.  (To. 대상) 형식을 지켜주세요. "
+      value: |
+        * **(To. 전체)** * **(To. 디자인)** * **(To. 프론트엔드)** * **(To. 백엔드)** validations:
+      required: true
